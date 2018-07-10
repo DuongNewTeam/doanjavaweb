@@ -9,8 +9,10 @@
 
 </head>
 <link rel="stylesheet" type="text/css" th:href="@{/css/checkout.css}"/>
+
 <body>
-    <section class="content">
+    <div th:replace="fragments/header :: header (vm=${vm1})"></div>
+    <section class="content" style="padding-top: 20px; padding-bottom: 20px">
         <div class="container">
             <div class="tintuc">
                 <div style="margin-top: -20px" id="about_us">
@@ -19,12 +21,12 @@
                     </div>
                     <div class="container-fluid">
                         <div style="padding-left: 20px" class="col-lg-7 col-md-7 col-sm-12">
-                            <table class="table table-striped table-hover product-checkout">
+                            <table class="table table-striped table-hover table-bordered product-checkout">
                                 <thead>
                                 <tr>
-                                    <th colspan="5"><h5 style="text-align: left">Giỏ hàng của bạn hiện có
+                                    <th colspan="5"><h4 style="text-align: center; font-weight: bold">Giỏ hàng của bạn hiện có
                                         <span th:text="${vm.getCart().getListCartProducts().size()}"></span>
-                                        sản phẩm</h5></th>
+                                        sản phẩm</h4></th>
                                 </tr>
                                 <tr>
                                     <th><h5>Mã sản phẩm</h5></th>
@@ -96,7 +98,7 @@
                                     </div>
                                 </fieldset>
                                 <div class="checkout-button">
-                                    <button type="submit" class="btn btn-success done btn-checkout">Tiến hành thanh toán</button>
+                                    <button type="submit" class="btn btn-success done btn-checkout" style="width: 100%">Tiến hành thanh toán</button>
                                 </div>
                             </form>
 
@@ -106,6 +108,8 @@
             </div>
         </div>
     </section>
+
+    <div th:replace="fragments/footer :: footer(vm = ${vm1})"></div>
 
     <script type="text/javascript" th:src="@{/plugins/WOW-master/dist/wow.js}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
