@@ -11,7 +11,7 @@ $(document).ready(function () {
 
         function reName(label) {
             var obj = {}
-            obj.label = "<img style='height: 50px;width: 50px' src='" + label.image + "'/> " + "<span style='font-size: 90%'>" + label.name + "</span>"
+            obj.label = "<img style='height: 50px;width: 50px' src='" + label.image + "'/> " + "<span style='font-size: 90%'; >" + label.name + "</span>" + "<span style='font-size: 90%;color: red'> " +label.price+ "đ</span>"
             obj.value = label.name
 
             return obj
