@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header-css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tin tức-Siêu thị thể thao Online</title>
+
+</head>
+
+<link rel="stylesheet" type="text/css" th:href="@{/css/product/index.css}"/>
+
+<body>
+<div th:replace="fragments/header :: header (vm=${vm})"></div>
+
+<div class="container">
+
+    <div class="order-breadcrumbs" >
+        <ul class="breadcrumb" style="background: #e3e7ed">
+            <li><a th:href="@{/}">Trang chủ</a></li>
+            <li>
+                <a th:href="@{'~/list-products/'+${vm.getInfo().getCategory().getId()}}">
+                    <span th:text="${vm.getInfo().getCategory().getName()}"></span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{'~/product/detail/' + ${vm.getInfo().getId()}}">
+                    <span th:text="${vm.getInfo().getName()}"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="row" style="border-bottom: 1px solid gray">
+        <div class="product_info col-sm-12 col-xs-12 col-md-9">
+            <div class="col-sm-12 col-xs-12 col-md-5">
+                <a th:href="@{'~/product/detail/' + ${vm.getInfo().getId()}}">
+                    <img th:src="${vm.getInfo().getImage()}" alt="" class="img-responsive" style="width: 300px; height: 300px">
+                </a>
+                <div class="footer_fourth-menu_connect">
+                    <div class="footer_fourth-menu_connect-logo">
+                        <a href="https://www.facebook.com/">
+                            <img src="https://www.shareicon.net/data/128x128/2016/08/01/640429_media_512x512.png" alt=""
+                                 style="width:40px; height: 40px">
+                        </a>
+                        <a href="https://www.youtube.com/">
+                            <img src="https://www.shareicon.net/data/128x128/2015/08/29/92756_play_607x607.png" style="height: 35px; width: 35px">
+                        </a>
+                        <a href="https://www.instagram.com/">
+                            <img src="https://www.shareicon.net/data/128x128/2016/07/08/117135_new_512x512.png" alt=""
+                                 style="width:35px; height: 35px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-xs-12 col-md-7">
+                <div class="product_name">
+                    <h2 th:text="${vm.getInfo().getName()}" style="font-weight: bold"></h2>
+                    <p>Hàng được cung cấp chính hãng tại <a th:href="@{/}">SportOnline Shop</a></p>
+                    <small style="color:#337ab7">(20000 chiếc đã được bán ra)</small>
+                    <div class="star">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </div>
+                </div>
+
+                <div class="section saleoff">
+                    <strong>Áp dụng khuyến mãi </strong>
+                    <div class="saleoff-info">
+                        <ul>
+                            <li class="saleoff-detailed">Miễn phí chuyển hàng trong bán kính 10km</li>
+                            <li class="saleoff-detailed">Có trả góp, miễn phí lãi suất 0% </li>
+                            <li class="saleoff-detailed">Tặng phiếu mua hàng lên tới 0VND</li>
+                            <li class="saleoff-detailed">Cơ hội bốc thăm trúng thưởng</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="product_price">
+                    <h2 th:text="${vm.getInfo().getPrice()}+ ' ' + 'VND'" style="font-weight: bold"></h2>
+                </div>
+
+                <div class="call-to-order">
+                    <div class="call-content">
+                        <i class="fa fa-phone"></i>
+                        Gọi điện đặt hàng 24/24 theo hotline:
+                        <p><b>04 37531909</b> - <b>0946.235.025</b></p>
+                    </div>
+                </div>
+
+                <div class="quantity-check">
+                    <div class="row">
+                        <div class="quantity-check-info col-sm-12 col-xs-12 col-md-6">
+                            <span style="font-weight: bold; color: #1877a0">Tình trạng: </span>
+                            <span th:if="${vm.getInfo().getQuantity() > 0}">Còn hàng</span>
+                        </div>
+                        <div class="col-sm-12 col-xs-12 col-md-2"></div>
+                        <div class="product-extra-link col-sm-12 col-xs-12 col-md-4">
+                            <a class="add-to-cart" th:attr="data-product=${vm.getInfo().getId()}">
+                                <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                            </a>
+                            <a class="add-to-favorite" href=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+                            <a class="add-to-refresh" href=""><i class="fa fa-refresh" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--<div class="product_description">-->
+                    <!--<h4 style="font-weight: bold">Mô tả sản phẩm</h4>-->
+                    <!--<p th:text="${vm.getInfo().getShortDesc()}"></p>-->
+                <!--</div>-->
+
+                <!--<h4>Created date</h4>-->
+                <!--<p th:text="${vm.getInfo().getCreatedDate().toString()}"></p>-->
+            </div>
+        </div>
+
+        <div class="contact-us col-sm-12 col-xs-12 col-md-3">
+            <div class="sidebar">
+                <div class="sidebar-1">
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title" data-toggle="collapse" href="#collapse1">
+                                    HỖ TRỢ KHÁCH HÀNG
+                                </h3>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Blog thể thao</li>
+                                    <li class="list-group-item">Hướng dẫn sử dụng</li>
+                                    <li class="list-group-item">Tư vấn sản phẩm</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+<script type="text/javascript" th:src="@{/plugins/WOW-master/dist/wow.js}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.9.0/sweetalert2.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/locale/vi.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+<script type="text/javascript" th:src = "@{/js/header.js}"></script>
+<script type="text/javascript" th:src="@{/js/index.js}"></script>
+</body>
+</html>
