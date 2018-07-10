@@ -147,6 +147,23 @@
 
 <div th:replace="fragments/footer :: footer"></div>
 
+<script th:src="@{/plugins/Readmore.js-master/readmore.js}"></script>
+
+<script>
+    $('#info').readmore({
+        moreLink: '<a href="#">Usage, examples, and options</a>',
+        collapsedHeight: 384,
+        afterToggle: function(trigger, element, expanded) {
+            if(! expanded) { // The "Close" link was clicked
+                $('html, body').animate({scrollTop: element.offset().top}, {duration: 100});
+            }
+        }
+    });
+
+    $('p').readmore({speed: 500});
+</script>
+
+
 <script type="text/javascript" th:src="@{/plugins/WOW-master/dist/wow.js}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

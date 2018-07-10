@@ -260,15 +260,41 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <th>Tên khách hàng</th>
                             <th>Điện thoại</th>
                             <th>Địa chỉ nhận hàng</th>
-                            <th>Mô tả đơn hàng </th>
+                            <th>Chi tiết đơn hàng </th>
                             <th>Thành tiền</th>
                             <th>Trạng thái</th>
-                            <th>Thời gian giao hàng</th>
+                            <th>Thời gian tạo</th>
                         </tr>
                         </thead>
 
                         <tbody>
-                        <tr></tr>
+                            <tr th:each="order : ${vm.getListOrders()}">
+                                <td>
+                                    <span th:text="${order.getId()}"></span>
+                                </td>
+                                <td>
+                                    <span th:text="${order.getName()}"></span>
+                                </td>
+                                <td>
+                                    <span th:text="${order.getPhone()}"></span>
+                                </td>
+                                <td>
+                                    <span th:text="${order.getAddress()}"></span>
+                                </td>
+                                <td th:each="orderProduct : ${vm.getListOrderProducts()}"
+                                    th:if="${orderProduct.getOrder() == order.getId()}">
+                                    <span th:text="${orderProduct.getProduct().getName()}"></span>
+                                </td>
+                                <td>
+                                    <span th:text="${order.getPrice()}"></span>
+                                </td>
+                                <td>
+                                    <span th:text="${order.getStatus()}"></span>
+                                </td>
+                                <td>
+                                    <span th:text="${order.getCreatedDate()}"></span>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

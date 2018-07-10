@@ -2,11 +2,9 @@ package application.controller.admin;
 
 import application.constant.Constant;
 import application.controller.web.BaseController;
-import application.data.model.Category;
-import application.data.model.Order;
-import application.data.model.PaginableItemList;
-import application.data.model.Product;
+import application.data.model.*;
 import application.data.service.CategoryService;
+import application.data.service.OrderProductService;
 import application.data.service.OrderService;
 import application.data.service.ProductService;
 import application.model.CategoryDataModel;
@@ -16,6 +14,7 @@ import application.viewmodel.landing.LandingVM;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,6 +39,9 @@ public class AdminController extends BaseController{
     @Autowired
     private OrderService orderService;
 
+    @Autowired
+    private OrderProductService orderProductService;
+
     @GetMapping(path = "/manage_product")
     public String admin(Model model) {
 
@@ -63,15 +65,16 @@ public class AdminController extends BaseController{
 
     @GetMapping(path = "/manage_order")
     public String orderAdmin(Model model) {
-//        AdminVM vm = new AdminVM();
-//        LandingVM landing = new LandingVM();
-//        long totalOrders = orderService.getTotalOrders();
-//
-//        List<Order> allOrders = orderService.getListOrders();
-//
-//        vm.setListOrders(allOrders);
-//
-//
+        AdminVM vm = new AdminVM();
+        LandingVM landing = new LandingVM();
+        long totalOrders = orderService.getTotalOrders();
+
+        List<Order> allOrders = orderService.getListOrders();
+        vm.setListOrders(allOrders);
+
+        List<OrderProduct> orderProductList = orderProductService.getListAllProductsOrdered();
+        vm.setListOrderProducts(orderProductList);
+        model.addAttribute("vm",vm);
         return "admin/manage_order";
     }
 
