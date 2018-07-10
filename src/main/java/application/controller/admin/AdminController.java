@@ -63,15 +63,15 @@ public class AdminController extends BaseController{
 
     @GetMapping(path = "/manage_order")
     public String orderAdmin(Model model) {
-        AdminVM vm = new AdminVM();
-        LandingVM landing = new LandingVM();
-        long totalOrders = orderService.getTotalOrders();
-
-        List<Order> allOrders = orderService.getListOrders();
-
-        vm.setListOrders(allOrders);
-
-
+//        AdminVM vm = new AdminVM();
+//        LandingVM landing = new LandingVM();
+//        long totalOrders = orderService.getTotalOrders();
+//
+//        List<Order> allOrders = orderService.getListOrders();
+//
+//        vm.setListOrders(allOrders);
+//
+//
         return "admin/manage_order";
     }
 

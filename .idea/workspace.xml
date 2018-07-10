@@ -168,8 +168,8 @@
       <file leaf-file-name="AdminController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/application/controller/admin/AdminController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="74" column="36" lean-forward="true" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="36" />
+            <state relative-caret-position="431">
+              <caret line="72" column="2" lean-forward="true" selection-start-line="72" selection-start-column="2" selection-end-line="72" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -739,7 +739,7 @@
       <path value="$PROJECT_DIR$/src/main/resources/static/plugins/WOW-master/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1680" />
     <option name="height" value="1050" />
   </component>
@@ -1286,12 +1286,12 @@
       <workItem from="1531118576944" duration="5783000" />
       <workItem from="1531135016571" duration="10136000" />
       <workItem from="1531193279626" duration="3956000" />
-      <workItem from="1531211417060" duration="6825000" />
+      <workItem from="1531211417060" duration="7278000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="412152000" />
+    <option name="totallyTimeSpent" value="412605000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1749,8 +1749,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/controller/admin/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="74" column="36" lean-forward="true" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="36" />
+        <state relative-caret-position="431">
+          <caret line="72" column="2" lean-forward="true" selection-start-line="72" selection-start-column="2" selection-end-line="72" selection-end-column="2" />
         </state>
       </provider>
     </entry>
