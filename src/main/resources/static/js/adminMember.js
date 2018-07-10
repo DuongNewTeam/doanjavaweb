@@ -11,7 +11,7 @@ $(document).ready(function () {
                             <td><p>${users.user.realname}</p></td>
                             <td>${users.user.createdDate}</td>
                             <td>${users.role.desc}</td>
-                            <td><button class="btn btn-default btn-edit-news" data-id="${users.user.id}">Ban thành viên</button> 
+                            <td><button class="btn btn-danger btn-edit-news" data-id="${users.user.id}">Khóa</button> 
                             </tr>
                 `)
             }
