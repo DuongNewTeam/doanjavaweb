@@ -1,17 +1,12 @@
 package application.controller.web;
 
-import application.data.model.Cart;
-import application.data.model.CartProduct;
-import application.data.model.Order;
-import application.data.model.OrderProduct;
-import application.data.service.CartProductService;
-import application.data.service.CartService;
-import application.data.service.OrderProductService;
-import application.data.service.OrderService;
+import application.data.model.*;
+import application.data.service.*;
 import application.viewmodel.cart.CartViewModel;
 import application.viewmodel.common.LayoutHeaderVM;
 import application.viewmodel.landing.LandingVM;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,6 +27,9 @@ import java.util.List;
 public class CartController extends BaseController {
 
     @Autowired
+    private UserService userService;
+
+    @Autowired
     private CartService cartService;
 
     @Autowired
@@ -48,6 +46,11 @@ public class CartController extends BaseController {
 
         LandingVM vm1 = new LandingVM();
         this.setLayoutHeaderVM(vm1);
+
+        String  username = SecurityContextHolder.getContext().getAuthentication().getName();
+
+        User listUsers = userService.findUserByUsername(username);
+        vm1.setUser(listUsers);
         model.addAttribute("vm1",vm1);
         Cookie cookie[] = request.getCookies();
 
@@ -82,6 +85,10 @@ public class CartController extends BaseController {
 
         LandingVM vm1 = new LandingVM();
         this.setLayoutHeaderVM(vm1);
+        String  username = SecurityContextHolder.getContext().getAuthentication().getName();
+
+        User listUsers = userService.findUserByUsername(username);
+        vm1.setUser(listUsers);
         model.addAttribute("vm1",vm1);
 
         Cookie cookie[] = request.getCookies();

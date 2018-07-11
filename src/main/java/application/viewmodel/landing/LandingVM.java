@@ -78,4 +78,14 @@ public class LandingVM extends LayoutHeaderVM {
     public void setProductList(List<Product> productList) {
         this.productList = productList;
     }
+
+    private List<User> listUsers;
+
+    public List<User> getListUsers() {
+        return listUsers;
+    }
+
+    public void setListUsers(List<User> listUsers) {
+        this.listUsers = listUsers;
+    }
 }
