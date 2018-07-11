@@ -1222,3 +1222,33 @@
 2018-Jul-11 05:37:35 AM [restartedMain] DEBUG application.Application - Start---
 2018-Jul-11 05:37:45 AM [restartedMain] DEBUG application.config.WebConfig - run defaultTemplateResolver
 2018-Jul-11 05:37:46 AM [restartedMain] DEBUG application.config.WebConfig - run addResourceHandlers
+2018-Jul-11 07:04:19 AM [main] DEBUG application.Application - Start---
+2018-Jul-11 07:04:19 AM [restartedMain] DEBUG application.Application - Start---
+2018-Jul-11 07:04:25 AM [restartedMain] DEBUG application.config.WebConfig - run defaultTemplateResolver
+2018-Jul-11 07:04:53 AM [main] DEBUG application.Application - Start---
+2018-Jul-11 07:04:53 AM [restartedMain] DEBUG application.Application - Start---
+2018-Jul-11 07:04:59 AM [restartedMain] DEBUG application.config.WebConfig - run defaultTemplateResolver
+2018-Jul-11 07:04:59 AM [restartedMain] DEBUG application.config.WebConfig - run addResourceHandlers
+2018-Jul-11 07:05:55 AM [main] DEBUG application.Application - Start---
+2018-Jul-11 07:05:56 AM [restartedMain] DEBUG application.Application - Start---
+2018-Jul-11 07:06:01 AM [restartedMain] DEBUG application.config.WebConfig - run defaultTemplateResolver
+2018-Jul-11 07:06:49 AM [main] DEBUG application.Application - Start---
+2018-Jul-11 07:06:50 AM [restartedMain] DEBUG application.Application - Start---
+2018-Jul-11 07:06:55 AM [restartedMain] DEBUG application.config.WebConfig - run defaultTemplateResolver
+2018-Jul-11 07:06:55 AM [restartedMain] DEBUG application.config.WebConfig - run addResourceHandlers
+2018-Jul-11 07:16:01 AM [main] DEBUG application.Application - Start---
+2018-Jul-11 07:16:01 AM [restartedMain] DEBUG application.Application - Start---
+2018-Jul-11 07:16:07 AM [restartedMain] DEBUG application.config.WebConfig - run defaultTemplateResolver
+2018-Jul-11 07:16:07 AM [restartedMain] DEBUG application.config.WebConfig - run addResourceHandlers
+2018-Jul-11 07:29:05 AM [main] DEBUG application.Application - Start---
+2018-Jul-11 07:29:05 AM [restartedMain] DEBUG application.Application - Start---
+2018-Jul-11 07:29:11 AM [restartedMain] DEBUG application.config.WebConfig - run defaultTemplateResolver
+2018-Jul-11 07:29:12 AM [restartedMain] DEBUG application.config.WebConfig - run addResourceHandlers
+2018-Jul-11 07:29:40 AM [main] DEBUG application.Application - Start---
+2018-Jul-11 07:29:41 AM [restartedMain] DEBUG application.Application - Start---
+2018-Jul-11 07:29:45 AM [restartedMain] DEBUG application.config.WebConfig - run defaultTemplateResolver
+2018-Jul-11 07:29:46 AM [restartedMain] DEBUG application.config.WebConfig - run addResourceHandlers
+2018-Jul-11 10:15:16 AM [main] DEBUG application.Application - Start---
+2018-Jul-11 10:15:16 AM [restartedMain] DEBUG application.Application - Start---
+2018-Jul-11 10:15:21 AM [restartedMain] DEBUG application.config.WebConfig - run defaultTemplateResolver
+2018-Jul-11 10:15:22 AM [restartedMain] DEBUG application.config.WebConfig - run addResourceHandlers

@@ -269,6 +269,15 @@ public class HomeController extends BaseController {
         model.addAttribute("vm", vm);
         return "login";
     }
+    @RequestMapping(value = "/register-user", method = RequestMethod.GET)
+    public String register(Model model) {
+        LandingVM vm = new LandingVM();
+        this.setLayoutHeaderVM(vm);
+        model.addAttribute("user",new User());
+        model.addAttribute("vm", vm);
+        return "login";
+    }
+
 
     @GetMapping(path = "/contact")
     public String contact(Model model){
