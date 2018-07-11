@@ -1,9 +1,6 @@
 package application.viewmodel.admin;
 
-import application.data.model.Category;
-import application.data.model.New;
-import application.data.model.Order;
-import application.data.model.Product;
+import application.data.model.*;
 import application.model.CategoryDataModel;
 import application.viewmodel.common.ProductVM;
 
@@ -20,6 +17,7 @@ public class AdminVM {
     private ArrayList<CategoryDataModel> listCategoryDataModels;
     private List<New> listNews;
     private List<Order> listOrders;
+    private List<OrderProduct> listOrderProducts;
 
     public String getMessageTotalProducts() {
         return messageTotalProducts;
@@ -90,5 +88,13 @@ public class AdminVM {
 
     public void setListOrders(List<Order> listOrders) {
         this.listOrders = listOrders;
+    }
+
+    public List<OrderProduct> getListOrderProducts() {
+        return listOrderProducts;
+    }
+
+    public void setListOrderProducts(List<OrderProduct> listOrderProducts) {
+        this.listOrderProducts = listOrderProducts;
     }
 }

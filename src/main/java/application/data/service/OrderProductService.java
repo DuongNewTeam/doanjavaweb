@@ -55,4 +55,13 @@ public class OrderProductService {
             return new ArrayList<>();
         }
     }
+
+//    public OrderProduct findOrderProduct(int productid, int orderid) {
+//        return orderProductRepository.findOrderProducsByProductidAndOrderid(productid,orderid);
+//    }
+
+//    public List<OrderProduct> getListOrderProductsByOrderId(int orderid) {
+//        return orderProductRepository.getAllProductsByOrder(orderid);
+//    }
+
 }

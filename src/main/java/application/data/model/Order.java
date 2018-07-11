@@ -49,6 +49,9 @@ public class Order {
     @OneToMany(mappedBy = "order",cascade = CascadeType.ALL)
     private List<OrderProduct> listOrders = new ArrayList<>();
 
+    @Column(name = "status")
+    private String status;
+
     public int getId() {
         return id;
     }
@@ -135,5 +138,13 @@ public class Order {
 
     public void setGuid(String guid) {
         this.guid = guid;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
