@@ -1,5 +1,6 @@
 package application.viewmodel.productindex;
 
+import application.data.model.User;
 import application.model.ProductDetailModel;
 
 import java.util.ArrayList;
@@ -22,5 +23,25 @@ public class ProductSearchVM {
 
     public void setKeyWord(String keyWord) {
         this.keyWord = keyWord;
+    }
+
+    private ProductDetailModel info;
+
+    public ProductDetailModel getInfo() {
+        return info;
+    }
+
+    public void setInfo(ProductDetailModel info) {
+        this.info = info;
+    }
+
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

@@ -65,6 +65,14 @@ public class ProductController extends BaseController {
     @RequestMapping(value = "/search", method = RequestMethod.GET)
     public String searchProduct(@ModelAttribute ProductName productName, BindingResult errors, Model model) {
         ModelMapper modelMapper = new ModelMapper();
+
+        LandingVM vm1 = new LandingVM();
+        this.setLayoutHeaderVM(vm1);
+        String  username = SecurityContextHolder.getContext().getAuthentication().getName();
+
+        User listUsers = userService.findUserByUsername(username);
+        vm1.setUser(listUsers);
+        model.addAttribute("vm1",vm1);
         ProductSearchVM productSearchVM = new ProductSearchVM();
         try {
             ArrayList<Product> products = new ArrayList<>();

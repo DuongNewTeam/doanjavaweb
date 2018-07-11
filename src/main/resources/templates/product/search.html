@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/header :: header-css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tin tức-Siêu thị thể thao Online</title>
+
+</head>
+<link rel="stylesheet" type="text/css" th:href="@{/css/product/search.css}"/>
+<body>
+<div th:replace="fragments/header :: header (vm=${vm1})"></div>
+<div class="container">
+    <div class="order-breadcrumbs" >
+        <ul class="breadcrumb" style="background: #e3e7ed">
+            <li><a th:href="@{/}">Trang chủ</a></li>
+            <li><a th:href="@{'~/product/search/' + ${vm.getKeyWord()}}" th:text="'Kết quả tìm kiếm cho: ' + ${vm.getKeyWord()}"></a></li>
+        </ul>
+    </div>
+    <h3 style="font-weight: bold" > Sản phẩm theo " <span th:text="${vm.getKeyWord()}"></span> "</h3>
+
+    <div th:if="${vm.getProductDetailModels() != null}" class="row">
+        <div class="container">
+            <div class="row" >
+                <div class="col-md-9 col-sm-12 col-xs-12">
+                    <div class="col-md-6 col-sm-12 col-xs-12 product-search_info" th:each="product : ${vm.getProductDetailModels()}" id="search__product">
+                        <div class="search__img float-left">
+                            <a class="item-product__img__link" th:href="@{'~/product/detail/' + ${product.getId()}}">
+                                <img th:src="${product.getImage()}" alt="" style="width: 170px; height: 170px">
+                            </a>
+                        </div>
+                        <div class="search__content float-left">
+                            <div class="search__content__name">
+                                <!--<div class="item-product__title ">-->
+                                <h3 th:text="${product.getName()}"></h3>
+                                <!--</div>-->
+                            </div>
+                            <div class="search__content__desc">
+                                <span th:text="${product.getShortDesc()}"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-us col-sm-12 col-xs-12 col-md-3">
+                    <div class="sidebar">
+                        <div class="sidebar-1">
+                            <div class="panel-group">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title" data-toggle="collapse" href="#collapse1">
+                                            HỖ TRỢ KHÁCH HÀNG
+                                        </h3>
+                                    </div>
+                                    <div id="collapse1" class="panel-collapse collapse">
+                                        <ul class="list-group">
+                                            <li class="list-group-item">Blog thể thao</li>
+                                            <li class="list-group-item">Hướng dẫn sử dụng</li>
+                                            <li class="list-group-item">Tư vấn sản phẩm</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" th:unless="${vm.getProductDetailModels() != null}">
+        <h2>Không có sản phẩm nào</h2>
+        <button class="btn btn-default"><a th:href="@{/}">Quay về trang chủ</a></button>
+    </div>
+</div>
+
+<div th:replace="fragments/footer :: footer(vm = ${vm1})"></div>
+
+<script th:src="@{/plugins/Readmore.js-master/readmore.js}"></script>
+
+<script type="text/javascript" th:src = "@{/js/header.js}"></script>
+<script type="text/javascript" th:src="@{/js/index.js}"></script>
+</body>
+</html>
