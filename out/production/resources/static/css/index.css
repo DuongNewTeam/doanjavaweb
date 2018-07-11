@@ -296,7 +296,8 @@ body{
     display: block;
 }
 .banner-box img{
-    max-width: 740px;
+    width: 740px;
+    height: 391px;
 }
 .big-banner{
     display: inline-block;

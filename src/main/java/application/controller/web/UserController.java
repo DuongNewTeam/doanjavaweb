@@ -23,11 +23,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping(path = "/register-user")
-    public String register(Model model) {
-        model.addAttribute("user",new User());
-        return "/register";
-    }
+//    @GetMapping(path = "/register-user")
+//    public String register(Model model) {
+//        model.addAttribute("user",new User());
+//        return "/login";
+//    }
 
     @RequestMapping(path = "/register-user", method = RequestMethod.POST)
     public String registerNewUser(@Valid @ModelAttribute("user")User user, BindingResult result) {
