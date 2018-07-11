@@ -10,6 +10,7 @@ import application.viewmodel.landing.BannerVM;
 import application.viewmodel.landing.LandingVM;
 import application.viewmodel.landing.MenuItemVM;
 import application.viewmodel.user.UserVM;
+import org.aspectj.weaver.ast.Or;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -49,6 +50,12 @@ public class HomeController extends BaseController {
 
     @Autowired
     private CartService cartService;
+
+    @Autowired
+    private OrderService orderService;
+
+    @Autowired
+    private OrderProductService orderProductService;
 
     @PreAuthorize("hasAnyRole('ADMIN')")
     @RequestMapping(path = "admin", method = RequestMethod.GET)
@@ -227,15 +234,20 @@ public class HomeController extends BaseController {
         User listUsers = userService.findUserByUsername(username);
         vm.setUser(listUsers);
 
-
         User existedUser = userService.findUserById(userId);
+
+        List<Order> listOrders = orderService.getListOrders();
+        vm.setListOrders(listOrders);
+
+        List<OrderProduct> orderProductList = orderProductService.getListAllProductsOrdered();
+        vm.setListOrderProducts(orderProductList);
+
         try {
             ModelMapper modelMapper = new ModelMapper();
 
             UserDetailModel userDetailModel = modelMapper.map(existedUser,UserDetailModel.class);
             model.addAttribute("user",userDetailModel);
 //                model.addAttribute("paginableItem",productServicse.getListProducts(pageSize,pageNumber));
-
         }catch (Exception e) {
             e.printStackTrace();
         }

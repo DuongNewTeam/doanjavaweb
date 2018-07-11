@@ -1,8 +1,6 @@
 package application.viewmodel.landing;
 
-import application.data.model.Category;
-import application.data.model.Product;
-import application.data.model.User;
+import application.data.model.*;
 import application.model.UserDataModel;
 import application.viewmodel.common.LayoutHeaderVM;
 import application.viewmodel.common.LogoVM;
@@ -87,5 +85,25 @@ public class LandingVM extends LayoutHeaderVM {
 
     public void setListUsers(List<User> listUsers) {
         this.listUsers = listUsers;
+    }
+
+    private List<Order> listOrders;
+
+    public List<Order> getListOrders() {
+        return listOrders;
+    }
+
+    public void setListOrders(List<Order> listOrders) {
+        this.listOrders = listOrders;
+    }
+
+    private List<OrderProduct> listOrderProducts;
+
+    public List<OrderProduct> getListOrderProducts() {
+        return listOrderProducts;
+    }
+
+    public void setListOrderProducts(List<OrderProduct> listOrderProducts) {
+        this.listOrderProducts = listOrderProducts;
     }
 }
