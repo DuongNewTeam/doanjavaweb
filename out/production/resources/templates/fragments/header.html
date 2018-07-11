@@ -52,7 +52,7 @@
                             <li id="role-menu"></li>
                             <li class="divider">
                             <!--<li><a th:href="@{/rules}">Chinh sách giao hàng</a></li>-->
-                            <li>
+                            <li sec:authorize="hasRole('ROLE_ADMIN')">
                                 <a th:href="@{~/admin}">Vào trang quản lý</a>
                             </li>
                             <li class="divider">
