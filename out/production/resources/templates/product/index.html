@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head th:replace="fragments/header :: header-css">
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -12,7 +13,7 @@
 <link rel="stylesheet" type="text/css" th:href="@{/css/product/index.css}"/>
 
 <body>
-<div th:replace="fragments/header :: header (vm=${vm})"></div>
+<div th:replace="fragments/header :: header (vm=${vm1})"></div>
 
 <div class="container">
 
@@ -145,7 +146,7 @@
     </div>
 </div>
 
-<div th:replace="fragments/footer :: footer"></div>
+<div th:replace="fragments/footer :: footer(vm = ${vm1})"></div>
 
 <script th:src="@{/plugins/Readmore.js-master/readmore.js}"></script>
 

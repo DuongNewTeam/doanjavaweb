@@ -1,6 +1,10 @@
 package application.data.model;
 
+import org.springframework.format.annotation.NumberFormat;
+
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity(name = "tbl_product")
@@ -17,6 +21,7 @@ public class Product {
     private String image;
 
     @Column(name = "price")
+    @NumberFormat(pattern = "#,###,###,###")
     private int price;
 
     @Column(name = "quantity")
