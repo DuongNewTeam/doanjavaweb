@@ -62,6 +62,12 @@ public class HomeController extends BaseController {
 
         LandingVM vm = new LandingVM();
         this.setLayoutHeaderVM(vm);
+
+        String  username = SecurityContextHolder.getContext().getAuthentication().getName();
+
+        User listUsers = userService.findUserByUsername(username);
+        vm.setUser(listUsers);
+
         ArrayList<BannerVM> listBanners = new ArrayList<>();
         listBanners.add(new BannerVM("https://sportonline.com.vn/wp-content/uploads/2017/10/may-chay-bo.jpg","Hah"));
         listBanners.add(new BannerVM("https://sportonline.com.vn/wp-content/uploads/2017/10/may-chay-bo-phong-gym.jpg","Hah"));
@@ -122,6 +128,9 @@ public class HomeController extends BaseController {
 
         User listUsers = userService.findUserByUsername(username);
         vm.setUser(listUsers);
+
+        List<User> userList = userService.getAllUsers();
+        vm.setListUsers(userList);
 
         if(principal != null) {
             System.out.println(username);
@@ -213,6 +222,12 @@ public class HomeController extends BaseController {
         LandingVM vm = new LandingVM();
         this.setLayoutHeaderVM(vm);
 
+        String  username = SecurityContextHolder.getContext().getAuthentication().getName();
+
+        User listUsers = userService.findUserByUsername(username);
+        vm.setUser(listUsers);
+
+
         User existedUser = userService.findUserById(userId);
         try {
             ModelMapper modelMapper = new ModelMapper();
@@ -233,6 +248,12 @@ public class HomeController extends BaseController {
     public String news(Model model, @RequestParam(value = "pageNumber", required = false)Integer pageNumber){
         LandingVM vm = new LandingVM();
         this.setLayoutHeaderVM(vm);
+
+        String  username = SecurityContextHolder.getContext().getAuthentication().getName();
+
+        User listUsers = userService.findUserByUsername(username);
+        vm.setUser(listUsers);
+
         model.addAttribute("vm",vm);
 
         AdminVM adminVM = new AdminVM();
@@ -266,6 +287,12 @@ public class HomeController extends BaseController {
     public String login(Model model) {
         LandingVM vm = new LandingVM();
         this.setLayoutHeaderVM(vm);
+
+        String  username = SecurityContextHolder.getContext().getAuthentication().getName();
+
+        User listUsers = userService.findUserByUsername(username);
+        vm.setUser(listUsers);
+
         model.addAttribute("vm", vm);
         return "login";
     }
@@ -273,6 +300,12 @@ public class HomeController extends BaseController {
     public String register(Model model) {
         LandingVM vm = new LandingVM();
         this.setLayoutHeaderVM(vm);
+
+        String  username = SecurityContextHolder.getContext().getAuthentication().getName();
+
+        User listUsers = userService.findUserByUsername(username);
+        vm.setUser(listUsers);
+
         model.addAttribute("user",new User());
         model.addAttribute("vm", vm);
         return "login";
@@ -283,6 +316,12 @@ public class HomeController extends BaseController {
     public String contact(Model model){
         LandingVM vm = new LandingVM();
         this.setLayoutHeaderVM(vm);
+
+        String  username = SecurityContextHolder.getContext().getAuthentication().getName();
+
+        User listUsers = userService.findUserByUsername(username);
+        vm.setUser(listUsers);
+
         model.addAttribute("vm",vm);
         return "contact";
     }

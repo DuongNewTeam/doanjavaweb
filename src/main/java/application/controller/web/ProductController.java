@@ -6,6 +6,7 @@ import application.data.service.ProductService;
 import application.data.service.UserService;
 import application.model.ProductDetailModel;
 import application.model.ProductName;
+import application.viewmodel.landing.LandingVM;
 import application.viewmodel.productindex.ProductIndexVM;
 import application.viewmodel.productindex.ProductSearchVM;
 import org.modelmapper.ModelMapper;
@@ -42,6 +43,10 @@ public class ProductController extends BaseController {
         User listUsers = userService.findUserByUsername(username);
         vm.setUser(listUsers);
 
+        LandingVM vm1 = new LandingVM();
+        this.setLayoutHeaderVM(vm1);
+        vm1.setUser(listUsers);
+
         Product existProduct = productService.findOne(productId);
         if(existProduct != null) {
             ModelMapper modelMapper = new ModelMapper();
@@ -50,6 +55,7 @@ public class ProductController extends BaseController {
 
             this.setLayoutHeaderVM(vm);
             model.addAttribute("vm",vm);
+            model.addAttribute("vm1",vm1);
             return "product/index";
         }else {
             throw new HttpClientErrorException(HttpStatus.NOT_FOUND);
