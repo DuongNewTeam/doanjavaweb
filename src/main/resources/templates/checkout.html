@@ -58,14 +58,14 @@
                         <div class="col-lg-5 col-md-5 col-xs-12" id="checkout">
                             <h2 style="font-weight: bold; padding-bottom: 30px">Thông tin liên lạc</h2>
 
-                            <form th:action="@{/checkout}" method="post" th:object="${order}">
+                            <form th:action="@{/checkout}" method="post" th:object="${order}" th:each=" user : ${vm1.getUser()}">
                                 <fieldset>
                                     <div class="content">
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <label>Tên khách hàng</label>
-                                                    <input type="text" class="form-control" id="input-name" th:field="*{name}" required = required
+                                                    <input type="text"  class="form-control" id="input-name" th:field="*{name}" required = required
                                                     placeholder="Nhập tên">
                                                 </div>
                                             </div>
