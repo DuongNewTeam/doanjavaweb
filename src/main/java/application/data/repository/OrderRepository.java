@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface OrderRepository extends JpaRepository<Order,Integer> {
@@ -16,4 +17,5 @@ public interface OrderRepository extends JpaRepository<Order,Integer> {
 
     @Query("select count(o.id) from tbl_order o where o.username = :username")
     long getTotalOrdersByUsername(@Param("username")String username);
+
 }

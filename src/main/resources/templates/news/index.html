@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header-css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tin tức-Siêu thị thể thao Online</title>
+
+</head>
+<link rel="stylesheet" type="text/css" th:href="@{/css/news/index.css}"/>
+<body>
+    <div th:replace="fragments/header :: header (vm=${vm})"></div>
+
+    <div class="container">
+        <div class="order-breadcrumbs" >
+            <ul class="breadcrumb" style="background: #e3e7ed">
+                <li><a th:href="@{/}">Trang chủ</a></li>
+                <li><a th:href="@{~/news}">Tin tức</a></li>
+                <li>
+                    <a th:href="@{'~/news/'+${news.getNewId()}}">
+                        <span th:text="${news.getTitle()}"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="news-detail col-sm-9">
+            <div class="news-detail-intro">
+                <small th:text="${news.getCreatedDate()}"></small>
+                <h3 style="font-weight: bold" th:text="${news.getTitle()}"></h3>
+            </div>
+            <div class="news-detail-img">
+                <img th:src="${news.getImg()}" alt="">
+            </div>
+            <div class="news-detail-content">
+                <span th:text="${news.getContent()}"></span>
+                <h5 class="contact">
+                    Còn chần chừ gì nữa. Hãy đến mua hàng tại SportOnline ngay và luôn thôi!!!
+                </h5>
+
+                <h5 class="contact">
+                    Nếu các bạn muốn tập luyện thể dục tại nhà tốt nhất thì có thể tham khảo các
+                    máy tập thể dục như máy chạy bộ và xe đạp tập thể dục tại Sport Online nhé!!!
+                </h5>
+
+                <h5 class="contact">
+                    Chúc các bạn tập luyện thật tốt và thành công!!!
+                </h5>
+            </div>
+        </div>
+
+        <div class="sidebar col-sm-3">
+            <div class="sidebar-1">
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title" data-toggle="collapse" href="#collapse1">
+                                Chuyên mục
+                            </h3>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse">
+                            <ul class="list-group">
+                                <li class="list-group-item">Blog thể thao</li>
+                                <li class="list-group-item">Hướng dẫn sử dụng</li>
+                                <li class="list-group-item">Tư vấn sản phẩm</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-1">
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title" data-toggle="collapse" href="#collapse2">
+                                Bài viết mới nhất
+                            </h3>
+                        </div>
+                        <div id="collapse2" class="panel-collapse collapse">
+                            <ul class="list-group">
+                                <li class="list-group-item">Blog thể thao</li>
+                                <li class="list-group-item">Hướng dẫn sử dụng</li>
+                                <li class="list-group-item">Tư vấn sản phẩm</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="fragments/footer :: footer (vm=${vm})"></div>
+</body>
+</html>

@@ -1,19 +1,10 @@
-.product-search_info {
-    padding: 15px;
-    border-bottom: 2px solid #eee8d5;
-    text-align: center;
-    border-right: 1px solid #e5e5e5;
-    border-left: 1px solid #e5e5e5;
+.breadcrumb {
+    margin-top: 30px;
 }
 
-.row {
-    margin-top: 10px;
+.sidebar{
+    margin-top: 20px;
 }
-
-.sidebar-1{
-    margin-bottom: 20px;
-}
-
 .panel-title{
     background: #7ebee6;
     cursor: pointer;
@@ -49,19 +40,25 @@
     -webkit-transition: all 0.5s ease-out 0s;
 }
 
-.breadcrumb {
-    margin-top: 30px;
-}
 
-.showroom, .hotline-intro, .policy{
+.sidebar-1{
+    margin-bottom: 20px;
+}
+.news-detail-intro h3 {
     padding-bottom: 10px;
 }
 
-.hotline-info-component, .policy-info-component {
-    padding-bottom: 5px;
+.news-detail-img img{
+    width: 100%;
+    height: auto;
 }
 
-.policy-info-component a {
-    text-decoration: none;
+.news-detail-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.contact {
+    padding-top: 10px;
     font-weight: bold;
 }

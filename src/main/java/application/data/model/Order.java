@@ -49,7 +49,6 @@ public class Order {
     @OneToMany(mappedBy = "order",cascade = CascadeType.ALL)
     private List<OrderProduct> listOrders = new ArrayList<>();
 
-    @Column(name = "status")
     private String status;
 
     public int getId() {

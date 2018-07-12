@@ -352,5 +352,16 @@ public class HomeController extends BaseController {
         return "contact";
     }
 
+    @GetMapping(path = "/thanks")
+    public String thanks(Model model) {
+        LandingVM vm = new LandingVM();
+        this.setLayoutHeaderVM(vm);
 
+        String  username = SecurityContextHolder.getContext().getAuthentication().getName();
+
+        User listUsers = userService.findUserByUsername(username);
+        vm.setUser(listUsers);
+
+        return "thanks";
+    }
 }
