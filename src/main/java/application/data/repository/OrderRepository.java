@@ -12,5 +12,8 @@ public interface OrderRepository extends JpaRepository<Order,Integer> {
     long getTotalOrders();
 
     @Query("select o from tbl_order o where o.username = :username")
-    List<Object> getOrderByUser(@Param("username")String username);
+    List<Order> getOrderByUser(@Param("username")String username);
+
+    @Query("select count(o.id) from tbl_order o where o.username = :username")
+    long getTotalOrdersByUsername(@Param("username")String username);
 }

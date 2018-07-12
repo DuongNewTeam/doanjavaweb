@@ -281,12 +281,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <td>
                                     <span th:text="${order.getAddress()}"></span>
                                 </td>
-                                <td th:each="orderProduct : ${vm.getListOrderProducts()}"
-                                    th:if="${orderProduct.getOrder() == order.getId()}">
-                                    <span th:text="${orderProduct.getProduct().getName()}"></span>
+                                <td>
+                                    <span th:each="orderProduct : ${vm.getListOrderProducts()}"
+                                          th:if="${orderProduct.getOrder().getId() == order.getId()}"
+                                          th:text="${orderProduct.getAmount()} + ' ' + ${orderProduct.getProduct().getName()} + ' ,'"></span>
                                 </td>
                                 <td>
-                                    <span th:text="${order.getPrice()}"></span>
+                                    <span th:text="${order.getPrice()} + ' VND'"></span>
                                 </td>
                                 <td>
                                     <span th:text="${order.getStatus()}"></span>

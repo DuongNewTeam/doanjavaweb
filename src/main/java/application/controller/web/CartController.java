@@ -51,6 +51,10 @@ public class CartController extends BaseController {
 
         User listUsers = userService.findUserByUsername(username);
         vm1.setUser(listUsers);
+
+        List<Cart> listCart = cartService.findByUserName(username);
+        vm1.setListCart(listCart);
+
         model.addAttribute("vm1",vm1);
         Cookie cookie[] = request.getCookies();
 
@@ -89,6 +93,10 @@ public class CartController extends BaseController {
 
         User listUsers = userService.findUserByUsername(username);
         vm1.setUser(listUsers);
+
+        List<Cart> listCart = cartService.findByUserName(username);
+        vm1.setListCart(listCart);
+
         model.addAttribute("vm1",vm1);
 
         Cookie cookie[] = request.getCookies();

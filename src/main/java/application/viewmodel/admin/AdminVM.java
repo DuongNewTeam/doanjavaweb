@@ -18,6 +18,7 @@ public class AdminVM {
     private List<New> listNews;
     private List<Order> listOrders;
     private List<OrderProduct> listOrderProducts;
+    private long TotalOrdersByUser;
 
     public String getMessageTotalProducts() {
         return messageTotalProducts;
@@ -96,5 +97,13 @@ public class AdminVM {
 
     public void setListOrderProducts(List<OrderProduct> listOrderProducts) {
         this.listOrderProducts = listOrderProducts;
+    }
+
+    public long getTotalOrdersByUser() {
+        return TotalOrdersByUser;
+    }
+
+    public void setTotalOrdersByUser(long totalOrdersByUser) {
+        TotalOrdersByUser = totalOrdersByUser;
     }
 }

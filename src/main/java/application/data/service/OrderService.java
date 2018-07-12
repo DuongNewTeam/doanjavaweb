@@ -67,9 +67,11 @@ public class OrderService {
         return orderRepository.getTotalOrders();
     }
 
-    public List<Object> getOrderByUser(String username) {
+    public List<Order> getOrderByUser(String username) {
         return orderRepository.getOrderByUser(username);
     }
 
-
+    public long getTotalOrdersByUsername(String username) {
+        return orderRepository.getTotalOrdersByUsername(username);
+    }
 }

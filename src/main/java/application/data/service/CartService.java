@@ -51,5 +51,8 @@ public class CartService {
     public List<Cart> findByUserName(String userName){
         return cartRepository.findByUserName(userName);
     }
+    public List<Cart> getAllCarts() {
+        return cartRepository.getAllCarts();
+    }
 
 }
