@@ -21,7 +21,7 @@
                     <div class="row"  >
                         <div class="col-sm-5">
                             <div class="post-thumb">
-                                <a class="post-thumb-link" href=""><img th:src="${news.getImg()}" alt=""></a>
+                                <a class="post-thumb-link" th:href="@{'~/news/' + ${news.getNewId()}}"><img th:src="${news.getImg()}" alt=""></a>
                             </div>
                         </div>
                         <div class="col-sm-7">
@@ -32,7 +32,8 @@
                                         <span th:text="${news.getCreatedDate()}"></span>
                                     </li>
                                 </ul>
-                                <h3 class="post-title"><a href="" th:text="${news.getTitle()}"></a></h3>
+                                <h3 class="post-title"><a th:href="@{'~/news/' + ${news.getNewId()}}"
+                                                          th:text="${news.getTitle()}"></a></h3>
                                 <p class="desc" th:text="${news.getContent()}"></p>
                             </div>
                         </div>

@@ -74,4 +74,6 @@ public class OrderService {
     public long getTotalOrdersByUsername(String username) {
         return orderRepository.getTotalOrdersByUsername(username);
     }
+
+
 }

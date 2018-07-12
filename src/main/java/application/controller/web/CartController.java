@@ -167,6 +167,7 @@ public class CartController extends BaseController {
 
             order.setPrice(sum);
             order.setCreatedDate(new Date());
+            order.setStatus("Đang xử lý");
 
             orderService.addNewOrder(order);
 
@@ -194,6 +195,6 @@ public class CartController extends BaseController {
 
         }
         System.out.print(order.getId());
-        return "redirect:/";
+        return "/thanks";
     }
 }

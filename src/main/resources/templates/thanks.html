@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header-css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tin tức-Siêu thị thể thao Online</title>
+
+</head>
+<body>
+
+    <!--<div th:replace="fragments/header :: header (vm=${vm})"></div>-->
+    <div class="container" style="padding-top: 30px ">
+        <div class="thanks">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <h2 style="font-weight: bold; color: red; padding-bottom: 20px">Bạn đã đặt hàng thành công !!!!</h2>
+                    <h4 style="font-weight: bold; padding-bottom: 10px">Cảm ơn bạn đã mua hàng với chúng tôi</h4>
+                    <p style="padding-bottom: 5px">Chúng tôi sẽ liên hệ và chuyển hàng cho bạn trong thời gian sớm nhất. </p>
+                    <p style="padding-bottom: 5px">Trong thời gian đợi chúng tôi liên hệ, mọi thắc mắc về đơn hàng hay sản phẩm xin liên hệ
+                        <strong>Hotline: 0946.235.025</strong>. Chúng tôi sẽ có câu trả lời làm bạn hài lòng nhất.
+                    </p>
+                    <p style="padding-top: 15px;padding-bottom: 50px; color: #0c5460; font-style: italic">” Sự hài lòng của khách hàng là tiêu chí phát triển của chúng tôi “
+                    </p>
+                    <button class="btn btn-success btn-back-to-index" style="width: 100% ">
+                        <a th:href="@{/}" style="color: white; text-decoration: none">Quay lại trang chủ</a>
+                    </button>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="thanks-image">
+                        <img src="https://media.giphy.com/media/osjgQPWRx3cac/giphy.gif" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="fragments/footer :: footer(vm=${vm})"></div>
+</body>
+</html>
