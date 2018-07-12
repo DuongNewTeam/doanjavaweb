@@ -15,4 +15,6 @@ public interface CartRepository extends JpaRepository<Cart,Integer> {
     @Query("select c from tbl_cart c where c.guid = :guid")
     List<Cart> findByGuid(@Param("guid") String guid);
 
+    @Query("select c from tbl_cart c")
+    List<Cart> getAllCarts();
 }

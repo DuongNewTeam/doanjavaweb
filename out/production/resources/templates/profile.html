@@ -124,12 +124,12 @@
                                     <h3 class="panel-title" style="font-weight: bold">Danh sách sản phẩm đã đặt</h3>
                                 </div>
                                 <div class="panel panel-body">
-                                    <table class="table table-striped table-hover table-list-orders"
+                                    <table class="table table-striped table-hover table-bordered table-list-orders"
                                            >
                                         <thead>
                                         <tr>
                                             <th colspan="7">
-                                                <h4 style="text-align: left;font-weight: bold">Bạn đã đặt 5 đơn hàng</h4>
+                                                <h4 style="text-align: left;font-weight: bold">Danh sách đơn hàng bạn đã đặt</h4>
                                             </th>
                                         </tr>
                                         <tr>
@@ -143,12 +143,16 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr th:each="order : ${vm.getListOrders()}">
+                                        <tr th:each="order : ${vm.getListOrders()}" th:if="${order.getUsername() == user.getUsername()}">
                                             <td th:text="${order.getCreatedDate()}"></td>
                                             <td th:text="${order.getName()}"></td>
                                             <td th:text="${order.getAddress()}"></td>
                                             <td th:text="${order.getPhone()}"></td>
-                                            <td th:text="${order.getListProducts()}"></td>
+                                            <td>
+                                                <span th:each="orderProduct : ${vm.getListOrderProducts()}"
+                                                      th:if="${orderProduct.getOrder().getId() == order.getId()}"
+                                                      th:text="${orderProduct.getAmount()} + ' ' + ${orderProduct.getProduct().getName()} + ' ,'"></span>
+                                            </td>
                                             <td th:text="${order.getPrice()} + ' VND'"></td>
                                             <td th:text="${order.getStatus()}"></td>
                                         </tr>

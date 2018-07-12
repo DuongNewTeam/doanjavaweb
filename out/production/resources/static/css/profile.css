@@ -42,3 +42,7 @@
 .btn-feedback {
     margin-top: 20px;
 }
+
+.table-list-orders th h5, td {
+    text-align: center;
+}

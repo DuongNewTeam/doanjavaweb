@@ -106,4 +106,14 @@ public class LandingVM extends LayoutHeaderVM {
     public void setListOrderProducts(List<OrderProduct> listOrderProducts) {
         this.listOrderProducts = listOrderProducts;
     }
+
+    private List<Cart> listCart;
+
+    public List<Cart> getListCart() {
+        return listCart;
+    }
+
+    public void setListCart(List<Cart> listCart) {
+        this.listCart = listCart;
+    }
 }

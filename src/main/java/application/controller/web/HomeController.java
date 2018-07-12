@@ -92,6 +92,9 @@ public class HomeController extends BaseController {
             e.printStackTrace();
         }
 
+        List<Cart> listCart = cartService.findByUserName(username);
+        vm.setListCart(listCart);
+
         vm.setListBanners(listBanners);
         model.addAttribute("vm",vm);
         return "list-products";
@@ -210,6 +213,9 @@ public class HomeController extends BaseController {
             }
         }
 
+        List<Cart> listCart = cartService.findByUserName(username);
+        vm.setListCart(listCart);
+
         int categoryId;
         if(productCategoryId != null) {
             categoryId = Integer.parseInt(productCategoryId);
@@ -252,6 +258,8 @@ public class HomeController extends BaseController {
             e.printStackTrace();
         }
 
+        List<Cart> listCart = cartService.findByUserName(username);
+        vm.setListCart(listCart);
         model.addAttribute("vm",vm);
         return "profile";
     }
@@ -288,6 +296,9 @@ public class HomeController extends BaseController {
 
         adminVM.setTotalPagingItems(totalPages);
         adminVM.setCurrentPage(pageNumber);
+
+        List<Cart> listCart = cartService.findByUserName(username);
+        vm.setListCart(listCart);
 
         model.addAttribute("adminvm",adminVM);
         model.addAttribute("news",news);
@@ -333,6 +344,9 @@ public class HomeController extends BaseController {
 
         User listUsers = userService.findUserByUsername(username);
         vm.setUser(listUsers);
+
+        List<Cart> listCart = cartService.findByUserName(username);
+        vm.setListCart(listCart);
 
         model.addAttribute("vm",vm);
         return "contact";

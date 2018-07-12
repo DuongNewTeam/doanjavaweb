@@ -1,7 +1,9 @@
 package application.controller.web;
 
+import application.data.model.Cart;
 import application.data.model.Product;
 import application.data.model.User;
+import application.data.service.CartService;
 import application.data.service.ProductService;
 import application.data.service.UserService;
 import application.model.ProductDetailModel;
@@ -20,6 +22,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpClientErrorException;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequestMapping(path = "/product")
@@ -30,6 +33,9 @@ public class ProductController extends BaseController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private CartService cartService;
 
     @GetMapping("/detail/{productId}")
     public String index (Model model, @PathVariable int productId, @CookieValue("current-page") String currentPageCookie) {
@@ -46,6 +52,9 @@ public class ProductController extends BaseController {
         LandingVM vm1 = new LandingVM();
         this.setLayoutHeaderVM(vm1);
         vm1.setUser(listUsers);
+
+        List<Cart> listCart = cartService.findByUserName(username);
+        vm1.setListCart(listCart);
 
         Product existProduct = productService.findOne(productId);
         if(existProduct != null) {
@@ -72,6 +81,9 @@ public class ProductController extends BaseController {
 
         User listUsers = userService.findUserByUsername(username);
         vm1.setUser(listUsers);
+        List<Cart> listCart = cartService.findByUserName(username);
+        vm1.setListCart(listCart);
+
         model.addAttribute("vm1",vm1);
         ProductSearchVM productSearchVM = new ProductSearchVM();
         try {
