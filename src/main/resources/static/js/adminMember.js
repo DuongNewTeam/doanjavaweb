@@ -11,12 +11,28 @@ $(document).ready(function () {
                             <td><p>${users.user.realname}</p></td>
                             <td>${users.user.createdDate}</td>
                             <td>${users.role.desc}</td>
-                            <td><button class="btn btn-danger btn-edit-news" data-id="${users.user.id}">Khóa</button> 
+                            <td><button class="btn btn-danger btn-ban-role" data-id="${users.user.id}">${users.status}</button> 
                             </tr>
                 `)
             }
 
-
+            $('.btn-ban-role').on('click',function () {
+                var id = $(this).data('id');
+                axios.get("/api/user/disable/" + id).then(function (value) {
+                    console.log(value.data);
+                    if(value.data.success){
+                        swal (
+                            "Thành công",
+                            value.data.message,
+                            'success'
+                        ).then(function (value1) {
+                            location.reload()
+                        })
+                    }else {
+                        console.log(value.data.message)
+                    }
+                })
+            })
 
             $('#Mytable').DataTable();
             // console.log($(".btn-remove-news"))

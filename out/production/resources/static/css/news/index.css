@@ -44,3 +44,21 @@
 .sidebar-1{
     margin-bottom: 20px;
 }
+.news-detail-intro h3 {
+    padding-bottom: 10px;
+}
+
+.news-detail-img img{
+    width: 100%;
+    height: auto;
+}
+
+.news-detail-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.contact {
+    padding-top: 10px;
+    font-weight: bold;
+}

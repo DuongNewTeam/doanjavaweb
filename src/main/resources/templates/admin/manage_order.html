@@ -21,6 +21,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" th:href="@{/css/admin/adminElement.css}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css"  />
+    <link href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css" rel="stylesheet" />
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -226,18 +229,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <p>Quản lý tin tức</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a th:href="@{'./manage_feedback'}" class="nav-link">
-                                    <i class="nav-icon"></i>
-                                    <p>Quản lý feedback</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a th:href="@{'./manage_subscribers'}" class="nav-link">
-                                    <i class="nav-icon"></i>
-                                    <p>Subscriber, mailing</p>
-                                </a>
-                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -253,7 +244,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <div class="tab-content">
                 <div class="active tab-pane" id="all">
-                    <table class="table table-bordered table-striped tablex">
+                    <table id="table-orders" class="table table-bordered table-striped tablex" >
                         <thead>
                         <tr class="table-title">
                             <th>Mã đơn hàng</th>
@@ -306,7 +297,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- jQuery -->
 <script type="text/javascript" th:src="@{/plugins/jquery/jquery.min.js}"></script>
-<script type="text/javascript" th:src="@{/plugins/bootstrap/js/bootstrap.min.js}"></script><!-- AdminLTE App -->
+<script type="text/javascript" th:src="@{/plugins/bootstrap/js/bootstrap.min.js}"></script>
+<script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
+<!-- AdminLTE App -->
 <script type="text/javascript" th:src="@{/dist/js/adminlte.js}"></script>
 <script type="text/javascript" th:src="@{/plugins/sparkline/jquery.sparkline.min.js}"></script>
 <script type="text/javascript" th:src="@{/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js}"></script>
@@ -315,5 +311,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script type="text/javascript" th:src="@{/plugins/chart.js/Chart.js}"></script>
 <script type="text/javascript" th:src="@{/dist/js/dashboard.js}"></script>
 <script type="text/javascript" th:src="@{/dist/js/demo.js}"></script>
+
+<script type="text/javascript" th:src="@{/js/adminElement.js}"></script>
 </body>
 </html>

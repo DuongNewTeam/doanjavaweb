@@ -81,7 +81,7 @@
                     </div>
                 </div>
 
-                <div class="column-container col-sm-5">
+                <div class="column-container col-sm-4">
                     <form action="#" th:action="@{/product/search}" autocomplete="off" th:object="${product}" method="get" role="search">
                         <!--<div >-->
                         <!--<div class="input-group col-md-12">-->
@@ -114,16 +114,16 @@
 
                     </form>
                 </div>
-                <div class="column-container col-sm-1">
-                    <a th:href="@{~/cart}" class="btn btn-info btn-lg">
-                        <span class="glyphicon glyphicon-shopping-cart"></span>
-                        <div class="cart-amount" th:each="user : ${vm.getUser()}">
-                            <div th:each="cart : ${vm.getListCart()}">
-                                <span th:text="${cart.getListCartProducts().size()}"></span>
-                            </div>
+                <div class="column-container col-sm-2">
+                    <div class="cart-amount" th:each="user : ${vm.getUser()}">
+                        <div th:each="cart : ${vm.getListCart()}">
+                            <span th:text="${cart.getListCartProducts().size()}"></span>
                         </div>
-                    </a>
+                    </div>
+                    <a th:href="@{~/cart}" class="btn btn-info btn-lg">
 
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                    </a>
                 </div>
                 <div class="column-container col-sm-3">
                     <div class="hotline">
