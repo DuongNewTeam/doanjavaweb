@@ -19,4 +19,7 @@ public interface UserRoleRepository extends CrudRepository<UserRole,Integer> {
 
     @Query("select u from tbl_userrole u")
     ArrayList<UserRole> getUserRole();
+
+    @Query("select u from tbl_userrole u where u.userId = :userId")
+    UserRole getUserRoleById(@Param("userId") int userId);
 }

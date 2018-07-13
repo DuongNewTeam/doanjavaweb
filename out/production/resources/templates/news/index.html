@@ -27,6 +27,25 @@
         <div class="news-detail col-sm-9">
             <div class="news-detail-intro">
                 <small th:text="${news.getCreatedDate()}"></small>
+                <h3 style="font-weight: bold" th:text="${news.getTitle()}"></h3>
+            </div>
+            <div class="news-detail-img">
+                <img th:src="${news.getImg()}" alt="">
+            </div>
+            <div class="news-detail-content">
+                <span th:text="${news.getContent()}"></span>
+                <h5 class="contact">
+                    Còn chần chừ gì nữa. Hãy đến mua hàng tại SportOnline ngay và luôn thôi!!!
+                </h5>
+
+                <h5 class="contact">
+                    Nếu các bạn muốn tập luyện thể dục tại nhà tốt nhất thì có thể tham khảo các
+                    máy tập thể dục như máy chạy bộ và xe đạp tập thể dục tại Sport Online nhé!!!
+                </h5>
+
+                <h5 class="contact">
+                    Chúc các bạn tập luyện thật tốt và thành công!!!
+                </h5>
             </div>
         </div>
 
@@ -71,5 +90,19 @@
     </div>
 
     <div th:replace="fragments/footer :: footer (vm=${vm})"></div>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/5b475f464af8e57442dc942a/default';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
 </body>
 </html>

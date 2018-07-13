@@ -7,11 +7,13 @@ public class UserRoleDataModel {
     private int id;
     private User user;
     private Role role;
+    private String status;
 
-    public UserRoleDataModel(int id, User user, Role role) {
+    public UserRoleDataModel(int id, User user, Role role, String status) {
         this.id = id;
         this.user = user;
         this.role = role;
+        this.status = status;
     }
 
     public int getId() {
@@ -36,5 +38,13 @@ public class UserRoleDataModel {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

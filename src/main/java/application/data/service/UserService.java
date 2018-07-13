@@ -166,5 +166,18 @@ public class UserService {
         return userRepository.findOne(userid);
     }
 
+    public UserRole getUserRole(int userId){
+        return userRoleRepository.getUserRoleById(userId);
+    }
+
+    public boolean saveUserRole(UserRole userRole){
+        try {
+            userRoleRepository.save(userRole);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }
 

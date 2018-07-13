@@ -1,5 +1,6 @@
 package application.controller.api;
 
+import application.constant.StatusRoleConstant;
 import application.data.model.User;
 import application.data.model.UserRole;
 import application.data.service.UserService;
@@ -31,8 +32,14 @@ public class UserApiController {
             ArrayList<UserRoleDataModel> userRoleDataModels = new ArrayList<>();
             userRoles = userService.getUserRole(); //lay ra role cua user
             for(UserRole u : userRoles) {
+                String status;
+                if(u.getStatus() == 0){
+                    status = "Bỏ chặn thành viên";
+                }else {
+                    status = "Chặn thành viên";
+                }
                 userRoleDataModels.add(new UserRoleDataModel(u.getId(),
-                        userService.findUserById(u.getUserId()),userService.findRoleById(u.getRoleId())));
+                        userService.findUserById(u.getUserId()),userService.findRoleById(u.getRoleId()),status));
 
             }
             result.setData(userRoleDataModels);
@@ -140,6 +147,29 @@ public class UserApiController {
                 result.setMessage("Password is wrong.Please check again");
             }
         }catch (Exception e) {
+            result.setSuccess(false);
+            result.setMessage(e.getMessage());
+        }
+        return result;
+    }
+
+    @GetMapping("/disable/{userId}")
+    public BaseApiResult disableUser(@PathVariable Integer userId){
+        DataApiResult result = new DataApiResult();
+        try {
+            UserRole userRole = userService.getUserRole(userId);
+            if(userRole.getStatus() == StatusRoleConstant.ActiveStatus){
+                userRole.setStatus(StatusRoleConstant.NonActiveStatus);
+                result.setMessage("Đã chặn user");
+                result.setData(false);
+            }else {
+                userRole.setStatus(StatusRoleConstant.ActiveStatus);
+                result.setMessage("Đã bỏ chặn user");
+                result.setData(true);
+            }
+            userService.saveUserRole(userRole);
+            result.setSuccess(true);
+        } catch (Exception e) {
             result.setSuccess(false);
             result.setMessage(e.getMessage());
         }

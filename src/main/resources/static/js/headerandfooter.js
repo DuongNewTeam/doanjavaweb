@@ -24,7 +24,8 @@ $(document).ready(function () {
                 x = x.toLocaleString('vi', {style : 'currency', currency : 'VND'});
                 return x
             }
-            obj.label = "<img style='height: 50px;width: 50px' src='" + label.image + "'/> " + "<span style='font-size: 90%'; >" + label.name + "</span>" + "<span  style='font-size: 90%;color: red; font-weight: bold'> " +money+ "</span>"
+            obj.label = "<img style='height: 50px;width: 50px' src='" + label.image + "'/> " + "<span style='font-size: 90%'; >" + label.name + "</span>"
+                + "<span  style='font-size: 12pt;color: red; font-weight: bold; padding-left: 10px'> " +money+ "</span>"
             obj.value = label.name
             return obj
         }

@@ -362,6 +362,7 @@ public class HomeController extends BaseController {
         User listUsers = userService.findUserByUsername(username);
         vm.setUser(listUsers);
 
+        model.addAttribute("vm",vm);
         return "thanks";
     }
 }

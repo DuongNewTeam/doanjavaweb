@@ -195,11 +195,28 @@ body {margin:0;font-family:Arial}
     top: -32px;
 }
 
+.cart-amount{
+    background: #fff none repeat scroll 0 0;
+    border-radius: 4px;
+    display: inline-block;
+    color: #1e73be;
+    font-size: 14px;
+    font-weight: 700;
+    height: 44px;
+    line-height: 44px;
+    position: static;
+    text-align: center;
+    vertical-align: top;
+    width: 50px;
+    border: 1px solid #e5e5e5;
+
+}
+
 .input-suggest {
     border: 1px solid black;
 }
 .input-control{
-    width: 350px;
+    width: 280px;
     height: 50px;
 }
 .search-button{

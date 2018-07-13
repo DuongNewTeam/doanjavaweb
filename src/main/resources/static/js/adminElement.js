@@ -195,4 +195,5 @@ $(document).ready(function () {
     $('#table_id_gtt').DataTable({
         "pagingType" : "full_numbers"
     });
+    $('#table-orders').DataTable();
 });
